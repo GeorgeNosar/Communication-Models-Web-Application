@@ -18,10 +18,11 @@ header {
 /*Первый элемент списка*/
 .top_line li.main {
 	color: white;
-	font-size: 15px;
+	font-size: 20px;
 	display: block;
 	padding: 0 60px;
 	line-height: 62px;
+	font-family: "BebasBold";
 }
 .top_line a {
 	color: #fff;
