@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Модели сетей связи</title>
+	<meta charset="utf-8" />
+	<!-- Подключаем bootstrap для удобной разметки, шрифты и стили -->
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" /> 
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+	<header>
+		<!-- Верхнее меню -->
+		<div class="top_line">
+			<div class="container">
+				<div class="row">
+					<ul>
+						<!-- Выбор модели связи с помощью списка -->
+						<li class="main">Choose a model:</li>
+						<li><a href="#">M/M/1</a></li>
+						<li><a href="#">M/M/M</a></li>
+						<li><a href="#">M/M/M</a></li>
+						<li><a href="#">M/M/M</a></li>
+						<li><a class="last" href="#">M/M/M</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- Секция подсчета -->
+	<section class="calc">
+	<div class="container">
+		<!-- Форма для заполнения данных -->
+		<form name="input">
+    		<h1>Enter data:</h1>
+   			<p>L</p>
+    		<input name="lyambda" value=""><br>
+    		<p>M</p>
+    		<input name="myu" value=""><br><br>
+    		<input type="button" onclick="CountForMM1()" id="mm1" class="button" value="Count">
+    	</form>
+	</div>	
+	</section>
+	<!-- Подключенные скрипты -->
+    <script src="js/code.js"></script>
+</body>
+</html>

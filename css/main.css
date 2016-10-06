@@ -1,0 +1,66 @@
+
+header {
+    min-height: 62px;
+    position: relative;
+    font-family: "BebasBold";
+}
+/*Верхнее меню*/
+.top_line {
+	background-color: #6495ED;
+	font-family: "BebasRegular";
+}
+.top_line ul {
+	margin: 0px;
+	padding-top: 0px;
+	padding-left: 0px;
+	list-style-type: none;
+}
+/*Первый элемент списка*/
+.top_line li.main {
+	color: white;
+	font-size: 15px;
+	display: block;
+	padding: 0 60px;
+	line-height: 62px;
+}
+.top_line a {
+	color: #fff;
+	font-size: 15px;
+	display: block;
+	padding: 0 60px;
+	line-height: 62px;
+	border-left: #3B3B3B 1px solid;
+}
+/*Последний элемент списка, добавил линию справа*/
+.top_line a.last {
+	border-right: #3B3B3B 1px solid;
+}
+.top_line li {
+	float: left;
+}
+.top_line li:hover a {
+	background-color: #009ACD;
+}
+.top_menu li.active a {
+	background-color: #009ACD;
+}
+.button {
+	display: inline-block;
+	background-color: #009ACD;
+	height: 35px;
+	vertical-align: middle;
+	line-height: 35px;
+	padding: 0 25px;
+	font-size: 20px;
+    color: #fff;
+    font-family: "BebasBold";
+}
+.button:hover {
+	background-color: #6495ED;
+}
+.button:active {
+	background-color: #009ACD;
+}
+.calc {
+	background-color: #EEC3F8;
+}
