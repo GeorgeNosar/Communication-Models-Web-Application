@@ -35,17 +35,19 @@
 		<form name="input">
     		<h1>Enter data:</h1>
    			<p>L</p>
-    		<input name="lyambda" value=""><br>
+    		<input name="lyambda" value="0"><br>
     		<p>M</p>
-    		<input name="myu" value=""><br><br>
-    		<input type="button" onclick="CountValuesForMM1()" id="mm1" class="button" value="Count">
+    		<input name="myu" value="0"><br><br>
+    		<input type="button" onclick="CountValuesForMM1()" class="button" value="Count">
+    		<input type="button" onclick="ShowHiddenElements('chart_div')" class="button" value="Build">
     	</form>
 	</div>	
 	</section>
-	<div id="chart_div">
-	</div>
+		<div id="chart_div">
+		</div>
 	<!-- Подключенные скрипты -->
     <script src="js/code.js"></script>
     <script src="js/chart.js"></script>
+    <script src="js/common.js"></script>
 </body>
 </html>

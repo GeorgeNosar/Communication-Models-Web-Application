@@ -19,11 +19,11 @@ function CountValuesForMM1() {
     		var form = document.forms.input;
     		var lyambda = form.elements.lyambda.value;
     		var myu = form.elements.myu.value;
+    		alert(lyambda);
+            alert(myu);
             if( (typeof lyambda == "number") && (typeof myu == "number") )
             {
-                alert(lyambda);
-                alert(myu);
-                if (myu > lyambda) 
+                if (myu >= lyambda) 
                 {     
                 	var max = 11;
             		var pk = [];

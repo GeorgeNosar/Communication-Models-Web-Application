@@ -24,15 +24,15 @@ function CountPkForGraphics(pk) {
         }
     else 
         {
-            //alert("Not a number");
+            alert("Not a number");
         }
 }
 
-var pk = [];
-CountPkForGraphics(pk);
 
 function drawLogScales() {
       var data = new google.visualization.DataTable();
+      var pk = [];
+      //CountPkForGraphics(pk);
 
       data.addColumn('number', 'X');
       data.addColumn('number', 'Pk');

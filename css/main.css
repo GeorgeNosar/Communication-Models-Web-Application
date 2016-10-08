@@ -1,4 +1,9 @@
-
+#chart_div {
+	display: none;
+}
+#info {
+	display: none;
+}
 header {
     min-height: 62px;
     position: relative;
