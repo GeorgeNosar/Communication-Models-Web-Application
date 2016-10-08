@@ -17,14 +17,14 @@ function CountTMM1(lyambda, myu) {
 /*Объединение первых трех функций в одну для вызова с помощью атрибута onclick в разметке*/
 function CountValuesForMM1() {
     		var form = document.forms.input;
-    		var lyambda = form.elements.lyambda.value;
-    		var myu = form.elements.myu.value;
-    		alert(typeof lyambda);
-    		alert(typeof myu);
+    		var lyambda = +(form.elements.lyambda.value);
+    		var myu = +(form.elements.myu.value);
+    		//alert(typeof lyambda);
+    		//alert(typeof myu);
             if( (typeof lyambda == "number") && (typeof myu == "number") )
             {
-            	alert(lyambda);
-            	alert(myu);
+            	//alert(lyambda);
+            	//alert(myu);
             	var max = 11;
             	var pk = [];
             	var k;
@@ -39,9 +39,9 @@ function CountValuesForMM1() {
                 	}  
                 	k = CountKMM1(lyambda, myu);
                 	t = CountTMM1(lyambda, myu);
-                	alert(pk);
-                	alert(k);
-                	alert(t);
+                	//alert(pk);
+                	//alert(k);
+                	//alert(t);
                 }
                 else
                 {
@@ -52,7 +52,6 @@ function CountValuesForMM1() {
             {
                 alert("Not a number");
             }
+            return pk;
 };
-
-
 

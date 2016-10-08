@@ -2,38 +2,12 @@ google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawLogScales);
 
 
-/*Вычисление массива потерь для построения графика*/
-function CountPkForGraphics(pk) {
-    var form = document.forms.input;
-    var lyambda = form.elements.lyambda.value;
-    var myu = form.elements.myu.value;
-    if( (typeof lyambda == "number") && (typeof myu == "number") )
-        {
-            var max = 11;
-            if (myu > lyambda) 
-            {
-                for(var i = 0; i < max; i++) 
-                {
-                  pk[i] = (1 - lyambda/myu) * ( (lyambda/myu) ^ k);
-                }
-            }
-            else
-            {
-                alert("Invalid values. Try M > L");
-            }
-        }
-    else 
-        {
-            alert("Not a number");
-        }
-}
-
 
 function drawLogScales() {
       var data = new google.visualization.DataTable();
       var pk = [];
-      //CountPkForGraphics(pk);
-
+      pk = CountValuesForMM1();
+      
       data.addColumn('number', 'X');
       data.addColumn('number', 'Pk');
 

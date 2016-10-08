@@ -16,3 +16,7 @@ function HideOpenElements(element_id) {
                 }
                 else alert("Element with id: " + element_id + " not found!"); 
 }; 
+function ShowAndBuild(element_id) {
+    ShowHiddenElements(element_id);
+    drawLogScales();
+}
