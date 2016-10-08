@@ -19,10 +19,16 @@ function CountValuesForMM1() {
     		var form = document.forms.input;
     		var lyambda = form.elements.lyambda.value;
     		var myu = form.elements.myu.value;
-    		alert(lyambda);
-            alert(myu);
+    		alert(typeof lyambda);
+    		alert(typeof myu);
             if( (typeof lyambda == "number") && (typeof myu == "number") )
             {
+            	alert(lyambda);
+            	alert(myu);
+            	var max = 11;
+            	var pk = [];
+            	var k;
+            	var t;
                 if (myu >= lyambda) 
                 {     
                 	var max = 11;
@@ -31,8 +37,8 @@ function CountValuesForMM1() {
                 	{
                   		pk[i] = CountPkMM1(lyambda, myu, i);
                 	}  
-                	var k = CountKMM1(lyambda, myu);
-                	var t = CountTMM1(lyambda, myu);
+                	k = CountKMM1(lyambda, myu);
+                	t = CountTMM1(lyambda, myu);
                 	alert(pk);
                 	alert(k);
                 	alert(t);
