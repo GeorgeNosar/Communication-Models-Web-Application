@@ -64,6 +64,17 @@ header {
 .calc {
 	background-color: #EEC3F8;
 }
+.calc form {
+	padding: 0 45px;
+	font-family: "BebasRegular";
+}
+.calc form p.main {
+	font-size: 20px;
+	font-family: "BebasBold";
+}
+.calc form input {
+	width: 205px;
+}
 /*Не отображаются по умолчанию для динамической страницы*/
 #chart_div {
 	display: none;

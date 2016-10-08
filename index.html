@@ -19,7 +19,7 @@
 						<!-- Выбор модели связи с помощью списка -->
 						<li class="main">Choose a model:</li>
 						<li><a href="#">M/M/1</a></li>
-						<li><a href="#">M/M/M</a></li>
+						<li><a href="#">M/M/∞</a></li>
 						<li><a href="#">M/M/M</a></li>
 						<li><a href="#">M/M/M</a></li>
 						<li><a class="last" href="#">M/M/M</a></li>
@@ -30,22 +30,39 @@
 	</header>
 	<!-- Секция подсчета -->
 	<section class="calc">
-	<div class="container">
 		<!-- Форма для заполнения данных -->
-		<form name="input">
-    		<h1>Enter data:</h1>
-   			<p>λ</p>
-    		<input name="lyambda" value=""><br>
-    		<p>μ</p>
-    		<input name="myu" value=""><br><br>
-    		<input type="button" onclick="CountValuesForMM1()" class="button" value="Count">
-    		<input type="button" onclick="ShowAndBuild('chart_div')" class="button" value="Build">
-    		<input type="button" onclick="HideOpenElements('chart_div')" class="button" value="Clear">
-    	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<form name="input">
+    			<p class="main">Enter data:</p>
+   				<p>λ</p>
+    			<input name="lyambda" value=""><br>
+    			<p>μ</p>
+    			<input name="myu" value=""><br><br>
+    			<input type="button" onclick="CountValuesForMM1()" class="button" value="Count">
+    			<input type="button" onclick="ShowAndBuild('chart_div')" class="button" value="Build">
+    			<input type="button" onclick="HideOpenElements('chart_div')" class="button" value="Clear">
+    			</form>
+			</div>
+			<div class="col-md-4"></div>
+			<div class="col-md-3"></div>
+		</div>
 	</div>	
 	</section>
-		<div id="chart_div">
+	<!-- Секция графиков -->
+	<section class="graphic">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div id="chart_div">
+				</div>
+			</div>
+			<div class="col-md-2"></div>
 		</div>
+	</div>
+	</section>
 	<!-- Подключенные скрипты -->
     <script src="js/code.js"></script>
     <script src="js/chart.js"></script>
