@@ -6,7 +6,7 @@ google.charts.setOnLoadCallback(drawLogScales);
 function drawLogScales() {
       var data = new google.visualization.DataTable();
       var pk = [];
-      pk = CountValuesForMM1();
+      pk = CountPkForChart();
       
       data.addColumn('number', 'X');
       data.addColumn('number', 'Pk');
@@ -20,7 +20,7 @@ function drawLogScales() {
       var options = {
         hAxis: {
           title: 'K',
-          logScale: true
+          logScale: false
         },
         vAxis: {
           title: 'Pk',
@@ -31,4 +31,16 @@ function drawLogScales() {
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
+    }
+
+    function AddKValueToChart() {
+      var k = CountKForChart();
+      var outputK = "K = " + k;
+      document.getElementById('valueK').innerHTML = outputK;
+    }
+
+    function AddTValueToChart() {
+      var t = CountTForChart();
+      var outputT = "T = " + t;
+      document.getElementById('valueT').innerHTML = outputT;
     }

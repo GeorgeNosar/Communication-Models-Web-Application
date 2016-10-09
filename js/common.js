@@ -19,4 +19,11 @@ function HideOpenElements(element_id) {
 function ShowAndBuild(element_id) {
     ShowHiddenElements(element_id);
     drawLogScales();
+    AddKValueToChart();
+    AddTValueToChart();
+};
+function ClearAllElements(element1, element2, element3) {
+    HideOpenElements(element1);
+    HideOpenElements(element2);
+    HideOpenElements(element3);
 }

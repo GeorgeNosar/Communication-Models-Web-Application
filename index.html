@@ -40,28 +40,24 @@
     			<input name="lyambda" value=""><br>
     			<p>μ</p>
     			<input name="myu" value=""><br><br>
-    			<input type="button" onclick="CountValuesForMM1()" class="button" value="Count">
     			<input type="button" onclick="ShowAndBuild('chart_div')" class="button" value="Build">
-    			<input type="button" onclick="HideOpenElements('chart_div')" class="button" value="Clear">
+    			<input type="button" onclick="ClearAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Clear">
+    			<input type="button" onclick="" class="button" value="Info">
     			</form>
 			</div>
-			<div class="col-md-4"></div>
-			<div class="col-md-3"></div>
+			<!-- Секция графиков -->
+			<div class="chart">
+			<div class="col-md-6">
+				<div id="chart_div"></div>
+			</div>
+			<div class="col-md-2">
+				<div id="valueK"></div>
+				<div id="valueT"></div>	
+			</div>
+			</div>
+		
 		</div>
 	</div>	
-	</section>
-	<!-- Секция графиков -->
-	<section class="graphic">
-		<div class="container">
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div id="chart_div">
-				</div>
-			</div>
-			<div class="col-md-2"></div>
-		</div>
-	</div>
 	</section>
 	<!-- Подключенные скрипты -->
     <script src="js/code.js"></script>

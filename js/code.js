@@ -14,34 +14,21 @@ function CountTMM1(lyambda, myu) {
 
 
 
-/*Объединение первых трех функций в одну для вызова с помощью атрибута onclick в разметке*/
-function CountValuesForMM1() {
+/*Рассчет величин для вызова с помощью атрибута onclick в разметке*/
+function CountPkForChart() {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
-    		//alert(typeof lyambda);
-    		//alert(typeof myu);
             if( (typeof lyambda == "number") && (typeof myu == "number") )
             {
-            	//alert(lyambda);
-            	//alert(myu);
             	var max = 11;
             	var pk = [];
-            	var k;
-            	var t;
                 if (myu >= lyambda) 
                 {     
-                	var max = 11;
-            		var pk = [];
             		for(var i = 0; i < max; i++) 
                 	{
                   		pk[i] = CountPkMM1(lyambda, myu, i);
                 	}  
-                	k = CountKMM1(lyambda, myu);
-                	t = CountTMM1(lyambda, myu);
-                	//alert(pk);
-                	//alert(k);
-                	//alert(t);
                 }
                 else
                 {
@@ -55,3 +42,48 @@ function CountValuesForMM1() {
             return pk;
 };
 
+function CountKForChart() {
+    		var form = document.forms.input;
+    		var lyambda = +(form.elements.lyambda.value);
+    		var myu = +(form.elements.myu.value);
+            if( (typeof lyambda == "number") && (typeof myu == "number") )
+            {
+            	var k;
+                if (myu >= lyambda) 
+                {     
+                	k = CountKMM1(lyambda, myu);
+                }
+                else
+                {
+                   alert("Invalid values. Try M > L");
+                }
+            }
+    		else 
+            {
+                alert("Not a number");
+            }
+            return k;
+};
+
+function CountTForChart() {
+    		var form = document.forms.input;
+    		var lyambda = +(form.elements.lyambda.value);
+    		var myu = +(form.elements.myu.value);
+            if( (typeof lyambda == "number") && (typeof myu == "number") )
+            {
+            	var t;
+                if (myu >= lyambda) 
+                {     
+                	t = CountTMM1(lyambda, myu);
+                }
+                else
+                {
+                   alert("Invalid values. Try M > L");
+                }
+            }
+    		else 
+            {
+                alert("Not a number");
+            }
+            return t;
+};

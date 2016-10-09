@@ -5,7 +5,7 @@ header {
 }
 /*Верхнее меню*/
 .top_line {
-	background-color: #6495ED;
+	background-color: #009ACD;
 	font-family: "BebasRegular";
 }
 .top_line ul {
@@ -39,7 +39,7 @@ header {
 	float: left;
 }
 .top_line li:hover a {
-	background-color: #009ACD;
+	background-color: #6495ED;
 }
 .top_menu li.active a {
 	background-color: #009ACD;
@@ -63,6 +63,7 @@ header {
 }
 .calc {
 	background-color: #EEC3F8;
+	height: 400px;
 }
 .calc form {
 	padding: 0 45px;
@@ -74,6 +75,24 @@ header {
 }
 .calc form input {
 	width: 205px;
+}
+.graphic {
+	background-color: #EEC3F8;
+	height: 200px;
+}
+#chart_div {
+	background-color: #EEC3F8;
+}
+#valueK {
+	font-size: 30px;
+	font-family: "BebasRegular";
+}
+#valueT {
+	font-size: 30px;
+	font-family: "BebasRegular";
+}
+.chart {
+	padding-top: 100px;
 }
 /*Не отображаются по умолчанию для динамической страницы*/
 #chart_div {
