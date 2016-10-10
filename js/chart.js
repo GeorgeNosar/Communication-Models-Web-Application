@@ -33,14 +33,17 @@ function drawLogScales() {
       chart.draw(data, options);
     }
 
+/*Отображение дополнительных величин*/
     function AddKValueToChart() {
       var k = CountKForChart();
+      k = k.toFixed(3);
       var outputK = "K = " + k;
       document.getElementById('valueK').innerHTML = outputK;
     }
 
     function AddTValueToChart() {
       var t = CountTForChart();
+      t = t.toFixed(3);
       var outputT = "T = " + t;
       document.getElementById('valueT').innerHTML = outputT;
     }

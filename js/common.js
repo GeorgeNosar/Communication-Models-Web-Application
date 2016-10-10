@@ -1,3 +1,4 @@
+/*Показать-скрыть элемент, используя id*/
 function ShowHiddenElements(element_id) {
                 if (document.getElementById(element_id)) { 
                     var obj = document.getElementById(element_id); 
@@ -16,8 +17,12 @@ function HideOpenElements(element_id) {
                 }
                 else alert("Element with id: " + element_id + " not found!"); 
 }; 
-function ShowAndBuild(element_id) {
-    ShowHiddenElements(element_id);
+
+/*Объединение функций для вызова по клику*/
+function ShowAndBuildAllElements(element1, element2, element3) {
+    ShowHiddenElements(element1);
+    ShowHiddenElements(element2);
+    ShowHiddenElements(element3);
     drawLogScales();
     AddKValueToChart();
     AddTValueToChart();

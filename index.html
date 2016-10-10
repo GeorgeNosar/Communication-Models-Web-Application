@@ -30,6 +30,11 @@
 	</header>
 	<!-- Секция подсчета -->
 	<section class="calc">
+	<div class="container">
+		<div class="row">
+			<h1>M/M/1 Model</h1>
+		</div>
+	</div>
 		<!-- Форма для заполнения данных -->
 	<div class="container">
 		<div class="row">
@@ -40,7 +45,7 @@
     			<input name="lyambda" value=""><br>
     			<p>μ</p>
     			<input name="myu" value=""><br><br>
-    			<input type="button" onclick="ShowAndBuild('chart_div')" class="button" value="Build">
+    			<input type="button" onclick="ShowAndBuildAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Build">
     			<input type="button" onclick="ClearAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Clear">
     			<input type="button" onclick="" class="button" value="Info">
     			</form>
