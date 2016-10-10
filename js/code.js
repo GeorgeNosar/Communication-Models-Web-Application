@@ -70,7 +70,7 @@ function CountTForChart() {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
-            if( (typeof lyambda == "number") && (typeof myu == "number") )
+            if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var t;
                 if (myu >= lyambda) 
