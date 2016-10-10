@@ -19,7 +19,8 @@ function CountPkForChart() {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
-            if( (typeof lyambda == "number") && (typeof myu == "number") )
+
+            if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var max = 11;
             	var pk = [];
@@ -37,7 +38,7 @@ function CountPkForChart() {
             }
     		else 
             {
-                alert("Not a number");
+                alert("enter numbers");
             }
             return pk;
 };
@@ -46,7 +47,7 @@ function CountKForChart() {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
-            if( (typeof lyambda == "number") && (typeof myu == "number") )
+            if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var k;
                 if (myu >= lyambda) 
