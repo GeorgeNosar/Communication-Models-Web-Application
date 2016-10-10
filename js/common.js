@@ -31,4 +31,25 @@ function ClearAllElements(element1, element2, element3) {
     HideOpenElements(element1);
     HideOpenElements(element2);
     HideOpenElements(element3);
-}
+};
+
+/*JQuery функция для скролла к элементу*/
+$(document).ready(function(){
+    $('#go_to').click( function(){ 
+    var scroll_el = $(this).attr('src'); 
+        if ($(scroll_el).length != 0) { 
+        $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); 
+        }
+        return false; 
+    });
+});
+
+/*$(document).ready(function(){
+    $('.go_to').click( function(){ // ловим клик по ссылке с классом go_to
+    var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
+        if ($(scroll_el).length != 0) { // проверим существование элемента чтобы избежать ошибки
+        $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); // анимируем скроолинг к элементу scroll_el
+        }
+        return false; // выключаем стандартное действие
+    });
+});*/

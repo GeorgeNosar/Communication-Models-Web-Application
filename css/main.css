@@ -5,7 +5,8 @@ header {
 }
 /*Верхнее меню*/
 .top_line {
-	background-color: #009ACD;
+	/*background-color: #009ACD;*/
+	background-image: url(../img/1.png);
 	font-family: "BebasRegular";
 }
 .top_line ul {
@@ -39,10 +40,7 @@ header {
 	float: left;
 }
 .top_line li:hover a {
-	background-color: #6495ED;
-}
-.top_line li:active a {
-	background-color: #308CCF;
+	background-image: url(../img/2.png);
 }
 .button {
 	display: inline-block;
@@ -62,11 +60,15 @@ header {
 	background-color: #009ACD;
 }
 .calc {
-	background-color: #EEC3F8;
+	background-image: url(../img/2.png);
 	height: 600px;
 }
 .calc form {
 	padding: 0 45px;
+	font-family: "BebasRegular";
+}
+.calc a {
+	margin-left: 20px;
 	font-family: "BebasRegular";
 }
 .calc form p.main {

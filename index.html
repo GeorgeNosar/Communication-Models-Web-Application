@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/fonts.css" />
 	<link rel="stylesheet" href="css/main.css" />
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="libs/jquery-3.1.1.min.js"></script>
 </head>
 <body>
 	<header>
@@ -47,7 +48,7 @@
     			<input name="myu" value=""><br><br>
     			<input type="button" onclick="ShowAndBuildAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Build">
     			<input type="button" onclick="ClearAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Clear">
-    			<input type="button" onclick="" class="button" value="Info">
+    			<input type="button" id="go_to" class="button" src=".info" value="info"><br>
     			</form>
 			</div>
 			<!-- Секция графиков -->
@@ -59,10 +60,13 @@
 				<div id="valueK"></div>
 				<div id="valueT"></div>	
 			</div>
-			</div>
-		
+			</div>		
 		</div>
 	</div>	
+	</section>
+	<!-- Секци информации о модели -->
+	<section class="info">
+		Здесь когда-нибудь появится информция.
 	</section>
 	<!-- Подключенные скрипты -->
     <script src="js/code.js"></script>
