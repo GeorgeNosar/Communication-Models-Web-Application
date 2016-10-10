@@ -79,9 +79,15 @@ header {
 	width: 205px;
 }
 .calc h1 {
+	color: #fff;
+	text-shadow: 0 3px rgba(0,0,0,0.55);
 	text-align: center;
 	font-family: "BebasBold";
 	font-size: 50px;
+}
+.shadowline {
+	box-shadow: rgba(255, 255, 255, 0.3) 0 0 0 1px;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 .graphic {
 	background-color: #EEC3F8;
