@@ -43,22 +43,22 @@
 		<div class="row">
 			<div class="col-md-4">
 				<form name="input">
-    			<p class="main">Enter data:</p>
+    			<p class="main">Enter data:</p> 
    				<p>λ</p>
     			<input name="lyambda" value=""><br>
     			<p>μ</p>
     			<input name="myu" value=""><br><br>
-    			<input type="button" onclick="ShowAndBuildAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Build">
-    			<input type="button" onclick="ClearAllElements('chart_div', 'valueK', 'valueT')" class="button" value="Clear">
+    			<input type="button" class="button" onclick="BuildAllElements()" id="fadeshow" value="Build">
+    			<input type="button" class="button" id="fadehide" value="Clear">
     			<input type="button" id="go_to" class="button" src=".info" value="info"><br>
     			</form>
 			</div>
 			<!-- Секция графиков -->
 			<div class="chart">
-			<div class="col-md-6">
+			<div class="col-md-5">
 				<div id="chart_div"></div>
 			</div>
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<div id="valueK"></div>
 				<div id="valueT"></div>	
 			</div>
