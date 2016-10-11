@@ -59,6 +59,11 @@ header {
 .button:active {
 	background-color: #009ACD;
 }
+.mainpagetext {
+	font-family: "RobotoLigth";
+	font-size: 20px;
+	color: #fff;
+}
 .calc {
 	background-image: url(../img/2.png);
 	height: 600px;
