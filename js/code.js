@@ -56,7 +56,6 @@ function CountPkForChart(modelName) {
                 		{
                   			pk[i] = CountPkMMInfinite(lyambda, myu, i);
                 		}
-                        alert(pk);  
                 }
             }
     		else 
@@ -86,7 +85,6 @@ function CountKForChart(modelName) {
 
             	else if(modelName == '2') {
             		k = CountKMMInfinite(lyambda, myu);
-                    alert(k);
             	}
             }
     		else 
@@ -115,7 +113,6 @@ function CountTForChart(modelName) {
             	}
             	else if(modelName == '2') {
             		t = CountTMMInfinite(lyambda, myu);
-                    alert(t);
             	}               
             }
     		else 
