@@ -15,17 +15,14 @@ function CountTMM1(lyambda, myu) {
 /*Вычисление для ММV*/
 function CountPkMMInfinite(lyambda, myu, k) {
 	var pk = ( ( (lyambda/myu)^k ) / factorial(k) )  *  Math.exp( -(lyambda/myu) );
-    alert(pk);
 	return pk;
 };
 function CountKMMInfinite(lyambda, myu) {
 	var k = lyambda / myu;
-    alert(k);
 	return k;
 };
 function CountTMMInfinite(lyambda, myu) {
 	var t = 1 / myu;
-    alert(t);
 	return t;
 }
 
