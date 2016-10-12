@@ -14,15 +14,18 @@ function CountTMM1(lyambda, myu) {
 
 /*Вычисление для ММV*/
 function CountPkMMInfinite(lyambda, myu, k) {
-	var pk = ( ( (lyambda/myu)^k ) / factorial(k) )  *  Math.pow(exp, -(lyambda/myu) );
+	var pk = ( ( (lyambda/myu)^k ) / factorial(k) )  *  Math.exp( -(lyambda/myu) );
+    alert(pk);
 	return pk;
 };
 function CountKMMInfinite(lyambda, myu) {
 	var k = lyambda / myu;
+    alert(k);
 	return k;
 };
 function CountTMMInfinite(lyambda, myu) {
-	var t = 1 / lyambda;
+	var t = 1 / myu;
+    alert(t);
 	return t;
 }
 
@@ -55,7 +58,8 @@ function CountPkForChart(modelName) {
                 	for(var i = 0; i < max; i++) 
                 		{
                   			pk[i] = CountPkMMInfinite(lyambda, myu, i);
-                		}  
+                		}
+                        alert(pk);  
                 }
             }
     		else 
@@ -85,6 +89,7 @@ function CountKForChart(modelName) {
 
             	else if(modelName == '2') {
             		k = CountKMMInfinite(lyambda, myu);
+                    alert(k);
             	}
             }
     		else 
@@ -113,6 +118,7 @@ function CountTForChart(modelName) {
             	}
             	else if(modelName == '2') {
             		t = CountTMMInfinite(lyambda, myu);
+                    alert(t);
             	}               
             }
     		else 
