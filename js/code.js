@@ -12,10 +12,24 @@ function CountTMM1(lyambda, myu) {
 	return t;
 };
 
+/*Вычисление для ММV*/
+function CountPkMMInfinite(lyambda, myu, k) {
+	var pk = ( ( (lyambda/myu)^k ) / factorial(k) )  *  Math.pow(exp, -(lyambda/myu) );
+	return pk;
+};
+function CountKMMInfinite(lyambda, myu) {
+	var k = lyambda / myu;
+	return k;
+};
+function CountTMMInfinite(lyambda, myu) {
+	var t = 1 / lyambda;
+	return t;
+}
+
 
 
 /*Рассчет величин для вызова с помощью атрибута onclick в разметке*/
-function CountPkForChart() {
+function CountPkForChart(modelName) {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
@@ -24,40 +38,54 @@ function CountPkForChart() {
             {
             	var max = 11;
             	var pk = [];
-                if (myu >= lyambda) 
-                {     
-            		for(var i = 0; i < max; i++) 
+            	if(modelName == '1') {
+            		if (myu >= lyambda) 
+                	{     
+            			for(var i = 0; i < max; i++) 
+                		{
+                  			pk[i] = CountPkMM1(lyambda, myu, i);
+                		}  
+                	}
+                	else
                 	{
-                  		pk[i] = CountPkMM1(lyambda, myu, i);
-                	}  
-                }
-                else
-                {
-                   alert("Invalid values. Try M > L");
+                   	alert("Invalid values. Try M > L");
+                	}
+            	}
+                else if(modelName == '2') {
+                	for(var i = 0; i < max; i++) 
+                		{
+                  			pk[i] = CountPkMMInfinite(lyambda, myu, i);
+                		}  
                 }
             }
     		else 
             {
-                alert("enter numbers");
+                alert("Not a number");
             }
             return pk;
 };
 
-function CountKForChart() {
+function CountKForChart(modelName) {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
             if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var k;
-                if (myu >= lyambda) 
-                {     
-                	k = CountKMM1(lyambda, myu);
-                }
-                else
-                {
-                   alert("Invalid values. Try M > L");
-                }
+            	if(modelName == '1') {
+            		if (myu >= lyambda) 
+                	{     
+                		k = CountKMM1(lyambda, myu);
+                	}
+                	else
+                	{
+                   		alert("Invalid values. Try M > L");
+                	}
+            	}
+
+            	else if(modelName == '2') {
+            		k = CountKMMInfinite(lyambda, myu);
+            	}
             }
     		else 
             {
@@ -66,21 +94,26 @@ function CountKForChart() {
             return k;
 };
 
-function CountTForChart() {
+function CountTForChart(modelName) {
     		var form = document.forms.input;
     		var lyambda = +(form.elements.lyambda.value);
     		var myu = +(form.elements.myu.value);
             if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var t;
-                if (myu >= lyambda) 
-                {     
-                	t = CountTMM1(lyambda, myu);
-                }
-                else
-                {
-                   alert("Invalid values. Try M > L");
-                }
+            		if(modelName == '1') {
+            			if (myu >= lyambda) 
+                		{     
+                			t = CountTMM1(lyambda, myu);
+                		}
+                		else
+                		{
+                   			alert("Invalid values. Try M > L");
+                		}
+            	}
+            	else if(modelName == '2') {
+            		t = CountTMMInfinite(lyambda, myu);
+            	}               
             }
     		else 
             {

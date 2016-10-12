@@ -1,9 +1,20 @@
 /*Объединение функций расчета для вызова по клику*/
-function BuildAllElements() {
-    drawLogScales();
-    AddKValueToChart();
-    AddTValueToChart();
+function BuildAllElements(modelName) {
+    drawLogScales(modelName);
+    AddKValueToChart(modelName);
+    AddTValueToChart(modelName);
 };
+
+/*Расчет факториала*/
+function factorial(n) {
+    var fac = 1;
+    for (var i = 2; i <= n; i++) {
+        fac *= i;
+    }
+    return fac;
+};
+
+
 /*JQuery функция для скролла к элементу*/
 $(document).ready(function(){
     $('#go_to').click( function(){ 
