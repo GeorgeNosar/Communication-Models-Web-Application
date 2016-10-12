@@ -44,7 +44,7 @@ header {
 }
 .button {
 	display: inline-block;
-	background-color: #009ACD;
+	background-image: url(../img/3.png);
 	height: 35px;
 	vertical-align: middle;
 	line-height: 35px;
@@ -54,7 +54,7 @@ header {
     font-family: "BebasBold";
 }
 .button:hover {
-	background-color: #6495ED;
+	background-image: url(../img/4.png);
 }
 .button:active {
 	background-color: #009ACD;
