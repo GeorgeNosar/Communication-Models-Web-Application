@@ -38,7 +38,9 @@ function CountPkForChart(modelName) {
             {
             	var max = 11;
             	var pk = [];
-            	if(modelName == '1') {
+                switch(modelName)
+                {
+            	case '1':
             		if (myu >= lyambda) 
                 	{     
             			for(var i = 0; i < max; i++) 
@@ -48,14 +50,15 @@ function CountPkForChart(modelName) {
                 	}
                 	else
                 	{
-                   	alert("Invalid values. Try M > L");
+                   	    alert("Invalid values. Try M > L");
                 	}
-            	}
-                else if(modelName == '2') {
+            	break;
+                case '2' :
                 	for(var i = 0; i < max; i++) 
                 		{
                   			pk[i] = CountPkMMInfinite(lyambda, myu, i);
                 		}
+                break;
                 }
             }
     		else 
@@ -72,7 +75,10 @@ function CountKForChart(modelName) {
             if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var k;
-            	if(modelName == '1') {
+                switch(modelName)
+                {
+
+            	case '1':
             		if (myu >= lyambda) 
                 	{     
                 		k = CountKMM1(lyambda, myu);
@@ -81,11 +87,12 @@ function CountKForChart(modelName) {
                 	{
                    		alert("Invalid values. Try M > L");
                 	}
-            	}
+            	break;
 
-            	else if(modelName == '2') {
+            	case '2' :
             		k = CountKMMInfinite(lyambda, myu);
-            	}
+            	break;
+                }
             }
     		else 
             {
@@ -101,7 +108,9 @@ function CountTForChart(modelName) {
             if( !((isNaN(lyambda)) || (isNaN(myu))) )
             {
             	var t;
-            		if(modelName == '1') {
+                switch(modelName)
+                {
+            		case '1' :
             			if (myu >= lyambda) 
                 		{     
                 			t = CountTMM1(lyambda, myu);
@@ -110,10 +119,11 @@ function CountTForChart(modelName) {
                 		{
                    			alert("Invalid values. Try M > L");
                 		}
-            	}
-            	else if(modelName == '2') {
+                break;
+            	case '2' :
             		t = CountTMMInfinite(lyambda, myu);
-            	}               
+            	break; 
+                }             
             }
     		else 
             {
