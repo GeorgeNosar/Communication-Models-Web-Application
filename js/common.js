@@ -1,8 +1,29 @@
 /*Объединение функций расчета для вызова по клику*/
 function BuildAllElements(modelName) {
-    drawLogScales(modelName);
-    AddKValueToChart(modelName);
-    AddTValueToChart(modelName);
+    var form = document.forms.input;
+    var lyambda = +(form.elements.lyambda.value);
+    var myu = +(form.elements.myu.value);
+    if( !((isNaN(lyambda)) || (isNaN(myu))) ) {
+        if( (lyambda > 0) && (myu > 0) ) {
+            if(modelName == '1') {
+                if(myu < lyambda) {
+                    alert("Wrong numbers. Try M > L");
+                    return false;
+                }
+            }
+            drawLogScales(modelName, lyambda, myu);
+            AddKValueToChart(modelName, lyambda, myu);
+            AddTValueToChart(modelName, lyambda, myu);
+        }
+        else
+        {
+            alert("Wrong numbers. Try > 0");
+        }
+    }
+    else
+    {
+        alert("Not a number!");
+    }
 };
 
 /*Расчет факториала*/
@@ -44,3 +65,7 @@ $(document).ready(function(){
         return false; // выключаем стандартное действие
     });
 });
+
+
+/*Focus and Blur functions*/
+

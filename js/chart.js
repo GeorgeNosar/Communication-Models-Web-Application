@@ -3,10 +3,10 @@ google.charts.setOnLoadCallback(drawLogScales);
 
 
 
-function drawLogScales(modelName) {
+function drawLogScales(modelName, lyambda, myu) {
       var data = new google.visualization.DataTable();
       var pk = [];
-      pk = CountPkForChart(modelName);
+      pk = CountPkForChart(modelName, lyambda, myu);
       
       data.addColumn('number', 'X');
       data.addColumn('number', 'Pk');
@@ -34,15 +34,15 @@ function drawLogScales(modelName) {
     }
 
 /*Отображение дополнительных величин*/
-    function AddKValueToChart(modelName) {
-      var k = CountKForChart(modelName);
+    function AddKValueToChart(modelName, lyambda, myu) {
+      var k = CountKForChart(modelName, lyambda, myu);
       k = k.toFixed(3);
       var outputK = "K = " + k;
       document.getElementById('valueK').innerHTML = outputK;
     }
 
-    function AddTValueToChart(modelName) {
-      var t = CountTForChart(modelName);
+    function AddTValueToChart(modelName, lyambda, myu) {
+      var t = CountTForChart(modelName, lyambda, myu);
       t = t.toFixed(3);
       var outputT = "T = " + t;
       document.getElementById('valueT').innerHTML = outputT;
