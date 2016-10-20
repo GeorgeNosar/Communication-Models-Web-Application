@@ -49,7 +49,7 @@ $(document).ready(function(){
 
 /*Функция плавного показа скрытого блока*/
 $(document).ready(function(){
-    $('#fadeshow').click( function(){ // ловим клик по ссылке с классом go_to
+    $('#fadeshow').click( function(){ // ловим клик по ссылке 
      $('#chart_div').fadeIn();
      $('#valueK').fadeIn();
      $('#valueT').fadeIn();
@@ -58,7 +58,7 @@ $(document).ready(function(){
 });
 /*Функция для плавного скрытия блока*/
 $(document).ready(function(){
-    $('#fadehide').click( function(){ // ловим клик по ссылке с классом go_to
+    $('#fadehide').click( function(){ // ловим клик по ссылке 
      $('#chart_div').fadeOut();
      $('#valueK').fadeOut();
      $('#valueT').fadeOut();
