@@ -64,6 +64,8 @@ header {
 	font-size: 20px;
 	color: #fff;
 }
+
+/*Calc Section*/
 .calc {
 	background-image: url(../img/2.png);
 	height: 600px;
@@ -109,6 +111,20 @@ header {
 .chart {
 	padding-top: 100px;
 }
+
+/*Info Section*/
+.info {
+	font-size: 20px;
+	font-family: "BebasRegular";
+	background-image: url(../img/3.png);
+	height: 665px;
+	padding-top: 50px;
+}
+.info strong {
+	font-size: 60px;
+	font-family: "BebasBold";
+}
+
 /*Не отображаются по умолчанию для динамической страницы*/
 #chart_div {
 	display: none;
