@@ -1,6 +1,6 @@
 /*Вычисление Рк, К и Т для модели М/М/1*/
 function CountPkMM1(lyambda, myu, k) {
-	var pk = (1 - lyambda/myu) * ( (lyambda/myu) ^ k);
+	var pk = (1 - lyambda/myu) * ( Math.pow((lyambda/myu), k) );
 	return pk;
 };
 function CountKMM1(lyambda, myu) {
@@ -14,7 +14,7 @@ function CountTMM1(lyambda, myu) {
 
 /*Вычисление для ММV*/
 function CountPkMMInfinite(lyambda, myu, k) {
-	var pk = ( ( (lyambda/myu)^k ) / factorial(k) )  *  Math.exp( -(lyambda/myu) );
+	var pk =  ( Math.pow((lyambda/myu), k) / factorial(k) )  *  Math.exp( -(lyambda/myu) );
 	return pk;
 };
 function CountKMMInfinite(lyambda, myu) {
