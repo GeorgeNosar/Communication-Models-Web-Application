@@ -5,7 +5,6 @@ header {
 }
 /*Верхнее меню*/
 .top_line {
-	/*background-color: #009ACD;*/
 	background-image: url(../img/1.png);
 	font-family: "BebasRegular";
 }
@@ -117,12 +116,24 @@ header {
 	font-size: 20px;
 	font-family: "BebasRegular";
 	background-image: url(../img/3.png);
-	height: 665px;
-	padding-top: 50px;
+	height: 580px;
+	padding-top: 0px;
+	text-align: center;
 }
 .info strong {
 	font-size: 60px;
 	font-family: "BebasBold";
+}
+.info .dia {
+	padding-top: 30px;
+}
+
+/*Footer*/
+footer {
+	color: white;
+	height: 82px;
+	background-image: url(../img/1.png);
+	font-family: "BebasRegular";
 }
 
 /*Не отображаются по умолчанию для динамической страницы*/

@@ -36,7 +36,7 @@ function factorial(n) {
 };
 
 
-/*JQuery функция для скролла к элементу*/
+/*JQuery функции для скролла*/
 $(document).ready(function(){
     $('#go_to').click( function(){ 
     var scroll_el = $(this).attr('src'); 
@@ -44,6 +44,13 @@ $(document).ready(function(){
         $('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500); 
         }
         return false; 
+    });
+});
+
+$(document).ready(function() {
+    $('#up').click( function() {
+        $('body').animate({ scrollTop: 0}, 500);
+        return false;
     });
 });
 
