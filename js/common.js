@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
 });
 
-/*Функция плавного показа скрытого блока*/
+/*Функция плавного показа блока*/
 $(document).ready(function(){
     $('#fadeshow').click( function(){ // ловим клик по ссылке 
      $('#chart_div').fadeIn();
@@ -73,6 +73,27 @@ $(document).ready(function(){
     });
 });
 
-
+/*dinmic page script*/
+function showHide(element_id) {
+    var element = document.getElementById(element_id);
+    var mm1 = document.getElementById("mm1");
+    var mm8 = document.getElementById("mm8");
+    if (element != mm1) {
+        if(mm1.style.display == "block") {
+            mm1.style.display = "none";
+        }
+    }
+    if (element != mm8) {
+        if(mm8.style.display == "block") {
+            mm8.style.display = "none";
+        }
+    }
+    if(element.style.display != "block") {
+        element.style.display = "block";
+    }
+    else {
+        element.style.display = "none";
+    }
+};
 
 
