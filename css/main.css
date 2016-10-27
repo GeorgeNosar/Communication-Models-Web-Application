@@ -121,11 +121,18 @@ header {
 	text-align: center;
 }
 .info strong {
-	font-size: 60px;
+	padding-top: 50px;
+	font-size: 40px;
 	font-family: "BebasBold";
 }
 .info .dia {
-	padding-top: 30px;
+	padding-top: 60px;
+}
+.info .graf {
+	padding-top: 60px;
+}
+.info .button {
+	margin-top: 100px;
 }
 
 /*Footer*/
