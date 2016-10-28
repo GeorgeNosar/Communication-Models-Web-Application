@@ -3,15 +3,18 @@ function BuildAllElements(modelName) {
     var form = document.forms.input;
     var lyambda = +(form.elements.lyambda.value);
     var myu = +(form.elements.myu.value);
+    if(modelName == '3') {
+        var v = +(form.elements.v.value);
+    }
     if( !((isNaN(lyambda)) || (isNaN(myu))) ) {
         if( (lyambda > 0) && (myu > 0) ) {
-            if(modelName == '1') {
+            if(modelName == '1' || modelName == '3') {
                 if(myu < lyambda) {
                     alert("Wrong numbers. Try M > L");
                     return false;
                 }
             }
-            drawLogScales(modelName, lyambda, myu);
+            drawLogScales(modelName, lyambda, myu, v);
             AddKValueToChart(modelName, lyambda, myu);
             AddTValueToChart(modelName, lyambda, myu);
         }
@@ -73,8 +76,8 @@ $(document).ready(function(){
     });
 });
 
-/*dinmic page script*/
-function showHide(element_id) {
+/*dinamic page script*/
+/*function showHide(element_id) {
     var element = document.getElementById(element_id);
     var mm1 = document.getElementById("mm1");
     var mm8 = document.getElementById("mm8");
@@ -94,6 +97,6 @@ function showHide(element_id) {
     else {
         element.style.display = "none";
     }
-};
+};*/
 
 

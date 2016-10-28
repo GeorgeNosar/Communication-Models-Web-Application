@@ -25,11 +25,45 @@ function CountTMMInfinite(lyambda, myu) {
 	var t = 1 / myu;
 	return t;
 }
-
+/*Формулы MMV8*/
+function CountPkMMVInf(lyambda, myu, k, v) {
+    var pk;
+    var ro = lyambda/myu; i
+    var sum = 0;
+    for(var i = 0; i <= (v-1); i++) {
+        sum += Math.pow(ro, i) / factorial(i);
+    }
+    if(k <= v) {
+        pk = (Math.pow(ro, factorial(k))) / (sum + ((Math.pow(ro, v)/factorial(v))*(v/(v-ro))));
+    }
+    else {
+        pk = ((Math.pow(ro, v)/factorial(v))*Math.pow((ro/v), (k-v))) / (sum + ((Math.pow(ro, v)/factorial(v))*(v/(v-ro))));
+    }
+    return pk;
+};
+function CountPtMMVInf(lyambda, myu, v) {
+    var pt;
+    var ro = lyambda/myu;
+    var sum = 0;
+    for(var i = 0; i <= (v-1); i++) {
+        sum += Math.pow(ro, i) / factorial(i);
+    }
+    pt = ( (Math.pow(ro, v)/factorial(v))*(v/(v-ro)) ) / (sum + ((Math.pow(ro, v)/factorial(v))*(v/(v-ro))));
+    return pt;
+};
+function CountGammaMMVInf(lyambda, myu, v) {
+    var gamma = 1 / (myu*(v-(lyambda/myu)));
+    return gamma;
+};
+function CountJMMVInf(lyambda, myu, v) {
+    var gamma = CountGammaMMVInf(lyambda, myu, v);
+    var j = lyambda * gamma;
+    return j;
+};
 
 
 /*Рассчет величин для вызова с помощью атрибута onclick в разметке*/
-function CountPkForChart(modelName, lyambda, myu) {
+function CountPkForChart(modelName, lyambda, myu, v) {
             	var max = 11;
             	var pk = [];
                 switch(modelName)
@@ -46,7 +80,14 @@ function CountPkForChart(modelName, lyambda, myu) {
                   		pk[i] = CountPkMMInfinite(lyambda, myu, i);
                 	}
                 break;
+                case '3':
+                    max = v + 10;
+                    for(var i = 0; i < max; i++)
+                    {
+                        pk[i] = CountPkMMVInf(lyambda, myu, i, v);
+                    }
                 }
+
             return pk;
 };
 
@@ -78,4 +119,37 @@ function CountTForChart(modelName, lyambda, myu) {
             	break; 
                 }             
             return t;
+};
+
+function CountPtForChart(modelName, lyambda, myu, v) {
+                var pt;
+                switch(modelName)
+                {
+                case '3' :    
+                    pt = CountPtMMVInf(lyambda, myu, v);
+                break;
+                }             
+            return pt;
+};
+
+function CountGammaForChart(modelName, lyambda, myu, v) {
+                var gamma;
+                switch(modelName)
+                {
+                case '3' :    
+                    gamma = CountGammaMMVInf(lyambda, myu, v);
+                break;
+                }             
+            return gamma;
+};
+
+function CountJForChart(modelName, lyambda, myu, v) {
+                var j;
+                switch(modelName)
+                {
+                case '3' :    
+                    j = CountJMMVInf(lyambda, myu, v);
+                break;
+                }             
+            return j;
 };
