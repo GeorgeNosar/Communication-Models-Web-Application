@@ -8,15 +8,28 @@ function BuildAllElements(modelName) {
     }
     if( !((isNaN(lyambda)) || (isNaN(myu))) ) {
         if( (lyambda > 0) && (myu > 0) ) {
-            if(modelName == '1' || modelName == '3') {
+            if(modelName == '1') {
                 if(myu < lyambda) {
                     alert("Wrong numbers. Try M > L");
                     return false;
                 }
             }
+            else if(modelName == '3') {
+                if(myu*v < lyambda) {
+                    alert("Wrong numbers. Try M*V > L");
+                    return false;
+                }
+            }
             drawLogScales(modelName, lyambda, myu, v);
-            AddKValueToChart(modelName, lyambda, myu);
-            AddTValueToChart(modelName, lyambda, myu);
+            if(modelName == '1' || modelName == '2') {
+             AddKValueToChart(modelName, lyambda, myu);
+             AddTValueToChart(modelName, lyambda, myu);               
+            }
+            else if(modelName == '3') {
+                AddPtValueToChart(modelName, lyambda, myu, v);
+                AddGammaValueToChart(modelName, lyambda, myu, v);
+                AddJValueToChart(modelName, lyambda, myu, v);
+            }
         }
         else
         {

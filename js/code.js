@@ -41,6 +41,7 @@ function CountPkMMVInf(lyambda, myu, k, v) {
     }
     return pk;
 };
+/*Вторая формула Эрланга*/
 function CountPtMMVInf(lyambda, myu, v) {
     var pt;
     var ro = lyambda/myu;
@@ -60,7 +61,25 @@ function CountJMMVInf(lyambda, myu, v) {
     var j = lyambda * gamma;
     return j;
 };
-
+function CountPkMMVK(lyambda, myu, k, v) {
+    var ro = lyambda / myu;
+    var sum = 0;
+    for (var i = 0; i <= v; i++) {
+        sum += Math.pow(ro, i) / factorial(i);
+    }
+    var pk = (Math.pow(ro, k)/factorial(k)) / sum;
+    return pk;
+};
+/*Первая формула Эрланга*/
+function CountPtMMVK(lyambda, myu, v) {
+    var ro = lyambda / myu;
+    var sum = 0;
+    for (var i = 0; i <= v; i++) {
+        sum += Math.pow(ro, i) / factorial(i);
+    }
+    var pt = (Math.pow(ro, v)/factorial(v)) / sum;
+    return pt;
+}
 
 /*Рассчет величин для вызова с помощью атрибута onclick в разметке*/
 function CountPkForChart(modelName, lyambda, myu, v) {
