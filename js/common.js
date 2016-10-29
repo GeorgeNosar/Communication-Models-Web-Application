@@ -14,7 +14,7 @@ function BuildAllElements(modelName) {
                     return false;
                 }
             }
-            else if(modelName == '3') {
+            else if(modelName == '3' || modelName == '4') {
                 if(myu*v < lyambda) {
                     alert("Wrong numbers. Try M*V > L");
                     return false;
@@ -22,13 +22,16 @@ function BuildAllElements(modelName) {
             }
             drawLogScales(modelName, lyambda, myu, v);
             if(modelName == '1' || modelName == '2') {
-             AddKValueToChart(modelName, lyambda, myu);
-             AddTValueToChart(modelName, lyambda, myu);               
+                AddKValueToChart(modelName, lyambda, myu);
+                AddTValueToChart(modelName, lyambda, myu);               
             }
             else if(modelName == '3') {
                 AddPtValueToChart(modelName, lyambda, myu, v);
                 AddGammaValueToChart(modelName, lyambda, myu, v);
                 AddJValueToChart(modelName, lyambda, myu, v);
+            }
+            else if(modelName == '4') {
+                AddPtValueToChart(modelName, lyambda, myu, v);
             }
         }
         else

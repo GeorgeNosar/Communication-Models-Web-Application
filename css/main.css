@@ -107,6 +107,18 @@ header {
 	font-size: 20px;
 	font-family: "BebasRegular";
 }
+#valuePt {
+	font-size: 20px;
+	font-family: "BebasRegular";
+}
+#valueGamma {
+	font-size: 20px;
+	font-family: "BebasRegular";
+}
+#valueJ {
+	font-size: 20px;
+	font-family: "BebasRegular";
+}
 .chart {
 	padding-top: 100px;
 }

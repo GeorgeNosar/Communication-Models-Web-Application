@@ -101,12 +101,19 @@ function CountPkForChart(modelName, lyambda, myu, v) {
                 break;
                 case '3':
                     max = v + 10;
-                    for(var i = 0; i < max; i++)
+                    for(var i = 0; i <= max; i++)
                     {
                         pk[i] = CountPkMMVInf(lyambda, myu, i, v);
                     }
+                break;
+                case '4':
+                    max = v;
+                    for(var i = 0; i <= max; i++)
+                    {
+                        pk[i] = CountPkMMVK(lyambda, myu, i, v);
+                    }
+                break;
                 }
-
             return pk;
 };
 
@@ -147,6 +154,8 @@ function CountPtForChart(modelName, lyambda, myu, v) {
                 case '3' :    
                     pt = CountPtMMVInf(lyambda, myu, v);
                 break;
+                case '4' :
+                    pt = CountPtMMVK(lyambda, myu, v);
                 }             
             return pt;
 };
