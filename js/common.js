@@ -3,7 +3,7 @@ function BuildAllElements(modelName) {
     var form = document.forms.input;
     var lyambda = +(form.elements.lyambda.value);
     var myu = +(form.elements.myu.value);
-    if(modelName == '3') {
+    if(modelName == '3' || modelName == '4') {
         var v = +(form.elements.v.value);
     }
     if( !((isNaN(lyambda)) || (isNaN(myu))) ) {
