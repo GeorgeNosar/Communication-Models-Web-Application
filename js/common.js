@@ -1,14 +1,208 @@
 /*Объединение функций расчета для вызова по клику*/
-function BuildAllElements(modelName) {
+function BuildAllElements(modelName) 
+{
     var form = document.forms.input;
-    var lyambda = +(form.elements.lyambda.value);
+    var lyambda,myu,a,v,n;
+
+    switch(modelName)
+    {
+    	case '1':
+    	lyambda = +(form.elements.lyambda.value);
+    	myu = +(form.elements.myu.value);
+    	if( !((isNaN(lyambda)) || (isNaN(myu))) )
+    	{
+    		if( (lyambda > 0) && (myu > 0) )
+    		{
+    			if(myu > lyambda) 
+    			{
+                    drawLogScales(modelName, lyambda, myu, v,a,n);
+                    AddKValueToChart(modelName, lyambda, myu);
+                	AddTValueToChart(modelName, lyambda, myu); 
+                }
+                else 
+                {
+                	alert("Wrong numbers. Try M > L");
+                }
+    		}
+    		else
+        	{
+            	alert("Wrong numbers. Try > 0");
+        	}
+    	}
+    	else
+    	{
+       		alert("Not a number!");
+    	}
+
+    	break;
+
+
+
+    	case '2':
+    	lyambda = +(form.elements.lyambda.value);
+    	myu = +(form.elements.myu.value);
+    	if( !((isNaN(lyambda)) || (isNaN(myu))) )
+    	{
+    		if( (lyambda > 0) && (myu > 0) )
+    		{
+    			drawLogScales(modelName, lyambda, myu, v,a, n);
+                AddKValueToChart(modelName, lyambda, myu);
+                AddTValueToChart(modelName, lyambda, myu); 
+    		}
+    		else
+        	{
+            	alert("Wrong numbers. Try > 0");
+        	}
+
+    	}
+    	else
+    	{
+       		alert("Not a number!");
+    	}
+    	break;
+
+
+    	case '3':
+    	lyambda = +(form.elements.lyambda.value);
+    	myu = +(form.elements.myu.value);
+    	v = +(form.elements.v.value);
+    	if( !((isNaN(lyambda)) || (isNaN(myu))|| (isNaN(v))) )
+    	{
+    		if( (lyambda > 0) && (myu > 0) && (v > 0))
+    		{
+    			if(isInteger(v))
+    			{
+    				if(myu*v > lyambda)
+    				{
+						drawLogScales(modelName, lyambda, myu, v,a, n);
+						AddPtValueToChart(modelName, lyambda, myu, v,a,n);
+						AddGammaValueToChart(modelName, lyambda, myu, v);
+                		AddJValueToChart(modelName, lyambda, myu, v);
+    				}
+    				else
+    				{
+    					alert("Wrong numbers. Try M*V > L");
+    				}
+    			}
+    			else
+    			{
+    				alert("V is not integer!");
+    			}
+
+    		}
+    		else
+        	{
+            	alert("Wrong numbers. Try > 0");
+        	}
+    	}
+    	else
+    	{
+       		alert("Not a number!");
+    	}
+
+
+    	break;
+    	case '4':
+    	lyambda = +(form.elements.lyambda.value);
+    	myu = +(form.elements.myu.value);
+    	v = +(form.elements.v.value);
+    	if( !((isNaN(lyambda)) || (isNaN(myu))|| (isNaN(v))) )
+    	{
+			if( (lyambda > 0) && (myu > 0) && (v > 0))
+    		{
+    			if(myu*v > lyambda)
+    			{
+					drawLogScales(modelName, lyambda, myu, v,a, n);
+					AddPtValueToChart(modelName, lyambda, myu, v,a,n);
+    			}
+    			else
+    			{
+    				alert("Wrong numbers. Try M*V > L");
+    			}
+
+    		}
+    		else
+        	{
+            	alert("Wrong numbers. Try > 0");
+        	}
+    	}
+    	else
+    	{
+       		alert("Not a number!");
+    	}
+
+    	break;
+
+
+    	case '5':
+    	a = +(form.elements.a.value);
+    	myu = +(form.elements.myu.value);
+    	v = +(form.elements.v.value);
+    	n = +(form.elements.n.value);
+    	if( !((isNaN(a)) || (isNaN(myu))|| (isNaN(v))|| (isNaN(n))) )
+    	{
+    		if( (a > 0) && (myu > 0) && (v > 0)&& (n > 0))
+    		{
+    			if(a<1)
+    			{
+    				if(isInteger(v)&&isInteger(n))
+    				{
+    					var alfa=(a*myu)/(1-a);
+    					if((alfa*n)<(v*myu))
+    					{
+    						//вызов построения граффика и значений 
+    					}
+    					else
+    					{
+    						alert("Wrong numbers. Try alfa*N < V*M");
+    					}
+    				}
+    				else
+    				{
+    					alert("Wrong numbers. N or V is not integer");
+    				}
+    			}
+    			else
+    			{
+    				alert("Wrong numbers. Try a<1");
+    			}
+    		}
+    		else
+        	{
+            	alert("Wrong numbers. Try > 0");
+        	}
+    	}
+    	else
+    	{
+       		alert("Not a number!");
+    	}
+
+    	break;
+
+
+    }
+};
+    /*
     var myu = +(form.elements.myu.value);
-    if(modelName == '3' || modelName == '4') {
+
+    if(modelName!='5')
+    {
+    	var lyambda = +(form.elements.lyambda.value);
+    }
+    
+    if(modelName == '3' || modelName == '4' || modelName == '5')
+    {
         var v = +(form.elements.v.value);
     }
+
+    if(modelName=='5')
+    {
+    	var a = +(form.elements.a.value)
+    }
+
     if( !((isNaN(lyambda)) || (isNaN(myu))) ) {
         if( (lyambda > 0) && (myu > 0) ) {
-            if(modelName == '1') {
+            if(modelName == '1')  {
                 if(myu < lyambda) {
                     alert("Wrong numbers. Try M > L");
                     return false;
@@ -43,7 +237,7 @@ function BuildAllElements(modelName) {
     {
         alert("Not a number!");
     }
-};
+};*/
 
 /*Расчет факториала*/
 function factorial(n) {
@@ -54,6 +248,20 @@ function factorial(n) {
     return fac;
 };
 
+/*Расчет сочетаний*/
+function combinations(K,N)
+{
+	var chisl=1;
+	for(var i=K+1;i<=N;i++)
+		chisl*=i;
+	var comb=chisl/factorial(N-K);
+	return comb;
+}
+
+/*проверка на целое число*/
+function isInteger(num) {
+  return (num ^ 0) == num;
+}
 
 /*JQuery функции для скролла*/
 $(document).ready(function(){
