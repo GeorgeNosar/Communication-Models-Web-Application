@@ -12,7 +12,7 @@ function CountTMM1(lyambda, myu) {
 	return t;
 };
 
-/*Вычисление для ММV*/
+/*Вычисление для ММ8*/
 function CountPkMMInfinite(lyambda, myu, k) {
 	var pk =  ( Math.pow((lyambda/myu), k) / factorial(k) )  *  Math.exp( -(lyambda/myu) );
 	return pk;
@@ -34,7 +34,7 @@ function CountPkMMVInf(lyambda, myu, k, v) {
         sum += Math.pow(ro, i) / factorial(i);
     }
     if(k <= v) {
-        pk = (Math.pow(ro, factorial(k))) / (sum + ((Math.pow(ro, v)/factorial(v))*(v/(v-ro))));
+        pk = (Math.pow(ro,k)/factorial(k)) / (sum + ((Math.pow(ro, v)/factorial(v))*(v/(v-ro))));
     }
     else {
         pk = ((Math.pow(ro, v)/factorial(v))*Math.pow((ro/v), (k-v))) / (sum + ((Math.pow(ro, v)/factorial(v))*(v/(v-ro))));
@@ -61,6 +61,7 @@ function CountJMMVInf(lyambda, myu, v) {
     var j = lyambda * gamma;
     return j;
 };
+/*Формулы MMVK*/
 function CountPkMMVK(lyambda, myu, k, v) {
     var ro = lyambda / myu;
     var sum = 0;
@@ -81,8 +82,45 @@ function CountPtMMVK(lyambda, myu, v) {
     return pt;
 }
 
+/*Вычисление для ММVKN*/
+
+function CountPkMMVKN(a,k,n,v)
+{
+    var sum=0;
+    var temp=a/(1-a);
+    for( var i=0;i<=v;i++)
+        sum+= combinations(i,n)*Math.pow(temp,i);
+    var pk=(combinations(k,n)*Math.pow(temp,k))/sum;
+    return pk;
+
+}
+
+
+function CountPtMMVKN(a,n,v)
+{
+    var sum=0;
+    var temp=a/(1-a);
+    for( var i=0;i<=v;i++)
+        sum+= combinations(i,n)*Math.pow(temp,i);
+    var pt=(combinations(v,n)*Math.pow(temp,v))/sum;
+    return pt;
+}
+
+function CountPvMMVKN(a,n,v)
+{
+    var sum=0;
+    var temp=a/(1-a);
+    for( var i=0;i<=v;i++)
+        sum+= combinations(i,n-1)*Math.pow(temp,i);
+    var pv=(combinations(v,n-1)*Math.pow(temp,v))/sum;
+    return pv;
+}
+
+
+
+
 /*Рассчет величин для вызова с помощью атрибута onclick в разметке*/
-function CountPkForChart(modelName, lyambda, myu, v) {
+function CountPkForChart(modelName, lyambda, myu, v,a,n) {
             	var max = 11;
             	var pk = [];
                 switch(modelName)
@@ -112,6 +150,14 @@ function CountPkForChart(modelName, lyambda, myu, v) {
                     {
                         pk[i] = CountPkMMVK(lyambda, myu, i, v);
                     }
+                break;
+                case '5':
+                    max=v;
+                    for(var i=0;i<=max;i++)
+                    {
+                        pk[i]=CountPkMMVKN(a,i,n,v)
+                    }
+
                 break;
                 }
             return pk;
@@ -147,7 +193,7 @@ function CountTForChart(modelName, lyambda, myu) {
             return t;
 };
 
-function CountPtForChart(modelName, lyambda, myu, v) {
+function CountPtForChart(modelName, lyambda, myu, v,a,n) {
                 var pt;
                 switch(modelName)
                 {
@@ -156,6 +202,9 @@ function CountPtForChart(modelName, lyambda, myu, v) {
                 break;
                 case '4' :
                     pt = CountPtMMVK(lyambda, myu, v);
+                break;
+                case '5':
+                    pt = CountPtMMVKN(a,n,v);
                 }             
             return pt;
 };
@@ -180,4 +229,14 @@ function CountJForChart(modelName, lyambda, myu, v) {
                 break;
                 }             
             return j;
+};
+
+function CountPvForChart(modelName,v,a,n) {
+                var pv;
+                switch(modelName)
+                {
+                case '5':
+                    pv = CountPvMMVKN(a,n,v);
+                }             
+            return pv;
 };
