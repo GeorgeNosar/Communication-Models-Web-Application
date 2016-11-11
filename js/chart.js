@@ -49,8 +49,7 @@ function drawLogScales(modelName, lyambda, myu, v, a, n) {
         vAxis: {
           title: 'Pk',
         },
-        colors: ['#a52714', '#097138'],
-        backgroundColor: '#f1f8e9'
+        colors: ['#a52714', '#097138']
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
