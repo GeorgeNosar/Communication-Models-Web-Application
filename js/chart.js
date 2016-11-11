@@ -3,13 +3,16 @@ google.charts.setOnLoadCallback(drawLogScales);
 
 
 
-function drawLogScales(modelName, lyambda, myu, v,a,n) {
+function drawLogScales(modelName, lyambda, myu, v, a, n) {
       var data = new google.visualization.DataTable();
       var pk = [];
-      pk = CountPkForChart(modelName, lyambda, myu, v,a,n);
+      pk = CountPkForChart(modelName, lyambda, myu, v, a, n);
       
       data.addColumn('number', 'X');
       data.addColumn('number', 'Pk');
+      if(modelName == '3') {
+        data.addColumn('number', 'Wk');
+      }
 
       if(modelName == '1' || modelName == '2') {
         data.addRows([
@@ -18,8 +21,20 @@ function drawLogScales(modelName, lyambda, myu, v,a,n) {
         [10, pk[10]] 
       ]);
       }
-      else if(modelName == '3' || modelName == '4') {
-        var max = v+10;
+      else if(modelName == '3') {
+        for(var i=0; i <= v; i++) {
+          data.addRows([
+            [i, pk[i], NaN]
+            ]);
+        }
+        for(var i = v; i <= v+10; i++) {
+          data.addRows([
+            [i, NaN, pk[i]]
+            ]);
+        }
+      }
+      else if(modelName == '4' || modelName == '5') {
+        var max = v;
         for(var i=0; i <= max; i++) {
           data.addRows([
             [i, pk[i]]
@@ -30,13 +45,12 @@ function drawLogScales(modelName, lyambda, myu, v,a,n) {
       var options = {
         hAxis: {
           title: 'K',
-          logScale: false
         },
         vAxis: {
           title: 'Pk',
-          logScale: false
         },
-        colors: ['#a52714', '#097138']
+        colors: ['#a52714', '#097138'],
+        backgroundColor: '#f1f8e9'
       };
 
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
@@ -59,10 +73,10 @@ function drawLogScales(modelName, lyambda, myu, v,a,n) {
     };
 
     function AddPtValueToChart(modelName, lyambda, myu, v,a,n) {
-      var pt = CountPtForChart(modelName, lyambda, myu, v);
-      pt = pt.toFixed(3);
-      var outputPt = "Pt = " + pt;
-      document.getElementById('valuePt').innerHTML = outputPt;  
+        var pt = CountPtForChart(modelName, lyambda, myu, v, a, n);
+        pt = pt.toFixed(3);
+        var outputPt = "Pt = " + pt;
+        document.getElementById('valuePt').innerHTML = outputPt;  
     };
 
     function AddGammaValueToChart(modelName, lyambda, myu, v) {
@@ -78,3 +92,10 @@ function drawLogScales(modelName, lyambda, myu, v,a,n) {
       var outputJ = "J = " + j;
       document.getElementById('valueJ').innerHTML = outputJ;  
     };
+
+    function AddPvValueToChart(modelName, a, n, v) {
+      var pv = CountPvForChart(modelName, v, a, n);
+      pv = pv.toFixed(3);
+      var outputPv = "Pv = " + pv;
+      document.getElementById('valuePv').innerHTML = outputPv;
+    }

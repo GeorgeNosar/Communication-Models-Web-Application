@@ -139,9 +139,13 @@ function CountPkForChart(modelName, lyambda, myu, v,a,n) {
                 break;
                 case '3':
                     max = v + 10;
+                    var db = 0;
                     for(var i = 0; i <= max; i++)
                     {
                         pk[i] = CountPkMMVInf(lyambda, myu, i, v);
+                        if(i>=v) {
+                            db += pk[i];
+                        }
                     }
                 break;
                 case '4':

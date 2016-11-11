@@ -150,7 +150,9 @@ function BuildAllElements(modelName)
     					var alfa=(a*myu)/(1-a);
     					if((alfa*n)<(v*myu))
     					{
-    						//вызов построения граффика и значений 
+    						drawLogScales(modelName, lyambda, myu, v, a, n);
+                            AddPtValueToChart(modelName, lyambda, myu, v, a, n);
+                            AddPvValueToChart(modelName, a, n, v);
     					}
     					else
     					{
@@ -182,6 +184,8 @@ function BuildAllElements(modelName)
 
     }
 };
+
+
     /*
     var myu = +(form.elements.myu.value);
 
