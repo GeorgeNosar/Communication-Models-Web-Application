@@ -67,7 +67,7 @@ header {
 /*Calc Section*/
 .calc {
 	background-image: url(../img/2.png);
-	height: 600px;
+	height: 650px;
 }
 .calc form {
 	padding: 0 45px;
@@ -116,6 +116,10 @@ header {
 	font-family: "BebasRegular";
 }
 #valueJ {
+	font-size: 20px;
+	font-family: "BebasRegular";
+}
+#valuePv {
 	font-size: 20px;
 	font-family: "BebasRegular";
 }
