@@ -84,42 +84,42 @@ function drawLogScales(modelName, lyambda, myu, v, a, n) {
 /*Отображение дополнительных величин*/
     function AddKValueToChart(modelName, lyambda, myu) {
       var k = CountKForChart(modelName, lyambda, myu);
-      k = k.toFixed(3);
+      k = k.toFixed(5);
       var outputK = "K = " + k;
       document.getElementById('valueK').innerHTML = outputK;
     };
 
     function AddTValueToChart(modelName, lyambda, myu) {
       var t = CountTForChart(modelName, lyambda, myu);
-      t = t.toFixed(3);
+      t = t.toFixed(5);
       var outputT = "T = " + t;
       document.getElementById('valueT').innerHTML = outputT;
     };
 
     function AddPtValueToChart(modelName, lyambda, myu, v,a,n) {
         var pt = CountPtForChart(modelName, lyambda, myu, v, a, n);
-        pt = pt.toFixed(3);
+        pt = pt.toFixed(5);
         var outputPt = "Pt = " + pt;
         document.getElementById('valuePt').innerHTML = outputPt;  
     };
 
     function AddGammaValueToChart(modelName, lyambda, myu, v) {
       var gamma = CountGammaForChart(modelName, lyambda, myu, v);
-      gamma = gamma.toFixed(3);
+      gamma = gamma.toFixed(5);
       var outputGamma = "γ = " + gamma;
       document.getElementById('valueGamma').innerHTML = outputGamma;  
     };
 
     function AddJValueToChart(modelName, lyambda, myu, v) {
       var j = CountJForChart(modelName, lyambda, myu, v);
-      j = j.toFixed(3);
+      j = j.toFixed(5);
       var outputJ = "J = " + j;
       document.getElementById('valueJ').innerHTML = outputJ;  
     };
 
     function AddPvValueToChart(modelName, a, n, v) {
       var pv = CountPvForChart(modelName, v, a, n);
-      pv = pv.toFixed(3);
+      pv = pv.toFixed(5);
       var outputPv = "Pv = " + pv;
       document.getElementById('valuePv').innerHTML = outputPv;
     }
