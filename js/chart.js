@@ -1,7 +1,7 @@
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawLogScales);
 
-
+var chart; //global chart
 
 function drawLogScales(modelName, lyambda, myu, v, a, n) {
       var data = new google.visualization.DataTable();
@@ -52,9 +52,34 @@ function drawLogScales(modelName, lyambda, myu, v, a, n) {
         colors: ['#a52714', '#097138']
       };
 
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
+    };
+
+  function ClearChart(modelName) {
+    switch(modelName) {
+      case '1': case '2':
+      document.getElementById('valueK').innerHTML = "";
+      document.getElementById('valueT').innerHTML = "";
+      break;
+
+      case '3':
+      document.getElementById('valuePt').innerHTML = "";
+      document.getElementById('valueJ').innerHTML = "";
+      document.getElementById('valueGamma').innerHTML = "";
+      break;
+
+      case '4':
+      document.getElementById('valuePt').innerHTML = "";
+      break;
+
+      case '5':
+      document.getElementById('valuePt').innerHTML = "";
+      document.getElementById('valuePv').innerHTML = "";
+      break;
     }
+    chart.clearChart();
+  };
 
 /*Отображение дополнительных величин*/
     function AddKValueToChart(modelName, lyambda, myu) {
@@ -81,7 +106,7 @@ function drawLogScales(modelName, lyambda, myu, v, a, n) {
     function AddGammaValueToChart(modelName, lyambda, myu, v) {
       var gamma = CountGammaForChart(modelName, lyambda, myu, v);
       gamma = gamma.toFixed(3);
-      var outputGamma = "Gamma = " + gamma;
+      var outputGamma = "γ = " + gamma;
       document.getElementById('valueGamma').innerHTML = outputGamma;  
     };
 

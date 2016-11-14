@@ -22,16 +22,19 @@ function BuildAllElements(modelName)
                 else 
                 {
                 	alert("Wrong numbers. Try M > L");
+                    ClearChart(modelName);
                 }
     		}
     		else
         	{
             	alert("Wrong numbers. Try > 0");
+                ClearChart(modelName);
         	}
     	}
     	else
     	{
        		alert("Not a number!");
+            ClearChart(modelName);
     	}
 
     	break;
@@ -52,12 +55,14 @@ function BuildAllElements(modelName)
     		else
         	{
             	alert("Wrong numbers. Try > 0");
+                ClearChart(modelName);
         	}
 
     	}
     	else
     	{
        		alert("Not a number!");
+            ClearChart(modelName);
     	}
     	break;
 
@@ -82,22 +87,26 @@ function BuildAllElements(modelName)
     				else
     				{
     					alert("Wrong numbers. Try M*V > L");
+                        ClearChart(modelName);
     				}
     			}
     			else
     			{
     				alert("V is not integer!");
+                    ClearChart(modelName);
     			}
 
     		}
     		else
         	{
             	alert("Wrong numbers. Try > 0");
+                ClearChart(modelName);
         	}
     	}
     	else
     	{
        		alert("Not a number!");
+            ClearChart(modelName);
     	}
 
 
@@ -118,17 +127,20 @@ function BuildAllElements(modelName)
     			else
     			{
     				alert("Wrong numbers. Try M*V > L");
+                    ClearChart(modelName);
     			}
 
     		}
     		else
         	{
             	alert("Wrong numbers. Try > 0");
+                ClearChart(modelName);
         	}
     	}
     	else
     	{
        		alert("Not a number!");
+            ClearChart(modelName);
     	}
 
     	break;
@@ -157,26 +169,31 @@ function BuildAllElements(modelName)
     					else
     					{
     						alert("Wrong numbers. Try alfa*N < V*M");
+                            ClearChart(modelName);
     					}
     				}
     				else
     				{
     					alert("Wrong numbers. N or V is not integer");
+                        ClearChart(modelName);
     				}
     			}
     			else
     			{
     				alert("Wrong numbers. Try a<1");
+                    ClearChart(modelName);
     			}
     		}
     		else
         	{
             	alert("Wrong numbers. Try > 0");
+                ClearChart(modelName);
         	}
     	}
     	else
     	{
        		alert("Not a number!");
+            ClearChart(modelName);
     	}
 
     	break;
@@ -291,6 +308,10 @@ $(document).ready(function(){
      $('#chart_div').fadeIn();
      $('#valueK').fadeIn();
      $('#valueT').fadeIn();
+     $('#valuePt').fadeIn();
+     $('#valuePv').fadeIn();
+     $('#valueGamma').fadeIn();
+     $('#valueJ').fadeIn();
         return false; // выключаем стандартное действие
     });
 });
@@ -300,6 +321,10 @@ $(document).ready(function(){
      $('#chart_div').fadeOut();
      $('#valueK').fadeOut();
      $('#valueT').fadeOut();
+     $('#valuePt').fadeOut();
+     $('#valuePv').fadeOut();
+     $('#valueGamma').fadeOut();
+     $('#valueJ').fadeOut();
         return false; // выключаем стандартное действие
     });
 });
