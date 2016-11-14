@@ -297,7 +297,7 @@ $(document).ready(function(){
 
 $(document).ready(function() {
     $('#up').click( function() {
-        $('body').animate({ scrollTop: 0}, 500);
+        $('html, body').animate({ scrollTop: 0}, 500);
         return false;
     });
 });
